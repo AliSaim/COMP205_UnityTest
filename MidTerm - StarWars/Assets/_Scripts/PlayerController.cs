@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour {
 	public Boundary boundary;
 
 	public Camera camera;
-	
+
+	public GameController gameController;
+
+
 	// PRIVATE INSTANCE VARIABLES
 	private Vector2 _newPosition = new Vector2(0.0f, 0.0f);
 	
@@ -15,6 +18,9 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 
 	}
+
+
+
 
 	// Update is called once per frame
 	void Update () {
@@ -53,4 +59,11 @@ public class PlayerController : MonoBehaviour {
 			this._newPosition.x = this.boundary.xMax;
 		}
 	}
+
+
+	//sigh
+	protected void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log ("hello!");
+	}
+		
 }
